@@ -19,45 +19,39 @@ export default function Nav4() {
             <p className='lead mb-4 pb-4'>
               <a
                 href='#'
-                className='pb-1 text-white text fw-bold fs-4 text-decoration-none'
+                className='pb-1 text-dark text fw-bold fs-4 text-decoration-none'
               >
                 Our selection:
               </a>
             </p>
           </div>
-          <nav className='nav nav-underline justify-content-between fw-bold mt-2 text-white text link-light'>
+          <nav className='nav nav-underline justify-content-between fw-bold mt-2 text-white text'>
             <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              className='nav-item nav-link text border border-dark text-body px-4 rounded border-2 bg-white'
               href='#'
             >
-              Women's Clothing
+              Men's Clothing
             </a>
             <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2 link-light rounded border-2'
+              className='nav-item nav-link text-white border border-dark text-body px-4 rounded border-2 bg-white'
               href='#'
             >
-              Electronics
+              Woman's Clothing
             </a>
             <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              className='nav-item nav-link text-white border border-dark text-body px-4 rounded border-2 bg-white'
               href='#'
             >
               Jewelery
             </a>
             <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              className='nav-item nav-link text-white border border-dark text-body px-4 rounded border-2 bg-white'
               href='#'
             >
-              Technology
+              Electronics
             </a>
             <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
-              href='#'
-            >
-              Technology
-            </a>
-            <a
-              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              className='nav-item nav-link border border-dark text-body px-4  rounded border-2 bg-white'
               href='#'
             >
               Technology
