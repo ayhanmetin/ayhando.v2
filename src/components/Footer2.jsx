@@ -1,15 +1,13 @@
 import React from 'react';
-// Import the FontAwesomeIcon component
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-// Import specific icons
 import { faLinkedin, faGithub } from '@fortawesome/free-brands-svg-icons';
 import { faEnvelope } from '@fortawesome/free-solid-svg-icons';
 
-export default function Footer() {
+export default function Footer2() {
   return (
     <>
       <div className='bg-dark'>
-        <div className='container d-flex flex-column flex-sm-row justify-content-between pt-4 mb-3 border-top fs-6'>
+        <div className='container d-flex flex-column flex-sm-row justify-content-between pt-4 mb-3fs-6'>
           <p style={{ color: 'white' }}>
             All prices include VAT and the manufacturer’s recommended retail
             price.{' '}

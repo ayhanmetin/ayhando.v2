@@ -11,7 +11,7 @@ export default function Footer3() {
   return (
     <>
       <div className='bg-white'>
-        <div className='container d-flex justify-content-end pb-4'>
+        <div className='container d-flex justify-content-end mt-3 pb-4'>
           <button
             onClick={scrollToTop}
             style={{

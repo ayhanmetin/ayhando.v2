@@ -1,4 +1,6 @@
 import React from 'react';
+import Footer2 from './Footer2';
+import Footer3 from './Footer3';
 
 export default function Footer() {
   const footerStyle = {
@@ -24,7 +26,6 @@ export default function Footer() {
 
   const copyrightStyle = {
     paddingTop: '4rem',
-    borderTop: '1px solid #e7e7e7',
   };
 
   const renderNavSection = (title, links) => (
@@ -43,73 +44,76 @@ export default function Footer() {
   );
 
   return (
-    <div style={footerStyle}>
-      <div className='bg-danger-subtle'>
-        <div className='container'>
-          <footer>
-            <div
-              className='d-flex flex-column flex-sm-row justify-content-between'
-              style={copyrightStyle}
-            ></div>
-            <div className='row'>
-              {renderNavSection('Help & Contact', [
-                'See all help topics',
-                'Paying by invoice',
-                'Track your parcel',
-                'Report a damaged item',
-                'Discover Ayhando Plus',
-                'Delivery information',
-                'Return an order',
-                'Find the right size',
-                'Report a vulnerability',
-              ])}
-              {renderNavSection('Gift Cards', [
-                'Buy Gift Cards',
-                'About gift cards and vouchers',
-                'Redeem a Gift Card',
-                'Corporate Gift Cards',
-              ])}
-              {renderNavSection('About us', [
-                'Visit our corporate site',
-                'Ayhando careers',
-                'Newsroom',
-                'Investor Relations',
-              ])}
-              {renderNavSection('Our partners', [
-                'DHL',
-                'DHL Express',
-                'Hermes',
-                'GLS',
-              ])}
-              {renderNavSection('Our payment methods', [
-                'Mastercard',
-                'Visa',
-                'PayPal',
-                'Invoice',
-                'SEPA ENG',
-                'Amex',
-                'Discover',
-                'Diners Club',
-              ])}
-              {renderNavSection('Our promises', [
-                'Free delivery for orders over 29,90 €',
-                '100-day return policy',
-                'Flexible payment options',
-              ])}
-              {renderNavSection('Our services', [
-                'Connect your stores',
-                'Marketing Services',
-                'Learn more',
-              ])}
-            </div>
-            <div
-              className='d-flex flex-column flex-sm-row justify-content-between'
-              style={copyrightStyle}
-            >
-            </div>
-          </footer>
+    <>
+      <div style={footerStyle}>
+        <div className='bg-primary-subtle'>
+          <div className='container'>
+            <footer>
+              <div
+                className='d-flex flex-column flex-sm-row justify-content-between'
+                style={copyrightStyle}
+              ></div>
+              <div className='row'>
+                {renderNavSection('Help & Contact', [
+                  'See all help topics',
+                  'Paying by invoice',
+                  'Track your parcel',
+                  'Report a damaged item',
+                  'Discover Ayhando Plus',
+                  'Delivery information',
+                  'Return an order',
+                  'Find the right size',
+                  'Report a vulnerability',
+                ])}
+                {renderNavSection('Gift Cards', [
+                  'Buy Gift Cards',
+                  'About gift cards and vouchers',
+                  'Redeem a Gift Card',
+                  'Corporate Gift Cards',
+                ])}
+                {renderNavSection('About us', [
+                  'Visit our corporate site',
+                  'Ayhando careers',
+                  'Newsroom',
+                  'Investor Relations',
+                ])}
+                {renderNavSection('Our partners', [
+                  'DHL',
+                  'DHL Express',
+                  'Hermes',
+                  'GLS',
+                ])}
+                {renderNavSection('Our payment methods', [
+                  'Mastercard',
+                  'Visa',
+                  'PayPal',
+                  'Invoice',
+                  'SEPA ENG',
+                  'Amex',
+                  'Discover',
+                  'Diners Club',
+                ])}
+                {renderNavSection('Our promises', [
+                  'Free delivery for orders over 29,90 €',
+                  '100-day return policy',
+                  'Flexible payment options',
+                ])}
+                {renderNavSection('Our services', [
+                  'Connect your stores',
+                  'Marketing Services',
+                  'Learn more',
+                ])}
+              </div>
+              <div
+                className='d-flex flex-column flex-sm-row justify-content-between'
+                style={copyrightStyle}
+              ></div>
+            </footer>
+          </div>
         </div>
       </div>
-    </div>
+      <Footer2 />
+      <Footer3 />
+    </>
   );
 }

@@ -1,31 +1,31 @@
 import React from 'react';
+import { NavLink } from 'react-router-dom';
 
 export default function Nav3() {
   return (
     <div className='container d-flex mt-1 flex-wrap align-items-center justify-content-between justify-content-lg-start border-bottom pb-3 ps-5 mb-0'>
-      <a
-        href='/'
+      <NavLink
+        to='/'
         className='d-flex align-items-center mb-2 mb-lg-0 text-secondary text-decoration-none'
-      ></a>
-
+      ></NavLink>
       <ul className='nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-between mb-md-0'>
         <li>
-          <a href='#' className='nav-link px-2 text-secondary'>
+          <NavLink to='/' className='nav-link px-2 text-secondary'>
             Home
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href='#' className='nav-link px-2 text-secondary'>
+          <NavLink to='/' className='nav-link px-2 text-secondary'>
             New In
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href='#' className='nav-link px-2 text-secondary'>
+          <NavLink to='/products' className='nav-link px-2 text-secondary'>
             Shop All
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href='#' className='nav-link px-2 text-secondary'>
+          <NavLink to='/category' className='nav-link px-2 text-secondary'>
             Discover{' '}
             <span
               className='rounded px-2'
@@ -33,12 +33,15 @@ export default function Nav3() {
             >
               Plus
             </span>
-          </a>
+          </NavLink>
         </li>
         <li>
-          <a href='#' className='nav-link px-2 text-secondary text-danger'>
+          <NavLink
+            to='/products'
+            className='nav-link px-2 text-secondary text-danger'
+          >
             Sale %
-          </a>
+          </NavLink>
         </li>
       </ul>
 
@@ -58,9 +61,9 @@ export default function Nav3() {
         >
           Login
         </button>
-        <button
-          type='button'
-          className='btn border border-light-subtle p-1 px-3 me-3'
+        <NavLink
+          className='nav-link border px-3 me-3 border-light-subtle p-1 rounded'
+          to='/favorite'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -75,10 +78,10 @@ export default function Nav3() {
               d='M8 1.314C12.438-3.248 23.534 4.735 8 15-7.534 4.736 3.562-3.248 8 1.314'
             />
           </svg>
-        </button>
-        <a
+        </NavLink>
+        <NavLink
           className='nav-link border px-3 border-light-subtle p-1 rounded'
-          href='#'
+          to='/cart'
         >
           <svg
             xmlns='http://www.w3.org/2000/svg'
@@ -90,7 +93,7 @@ export default function Nav3() {
           >
             <path d='M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5M5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4m7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4m-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2m7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2' />
           </svg>
-        </a>
+        </NavLink>
       </div>
     </div>
   );
