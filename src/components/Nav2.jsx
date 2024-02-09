@@ -4,7 +4,7 @@ export default function Nav2() {
   return (
     <>
       <div className='container'>
-        <nav class='nav nav-underline justify-content-between mt-3'>
+        <nav class='nav nav-underline justify-content-between mt-3 ps-5 pb-2'>
           <a class='nav-item nav-link link-body-emphasis' href='#'>
             Men's Clothing
           </a>

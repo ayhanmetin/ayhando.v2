@@ -10,35 +10,56 @@ export default function Nav4() {
       <div className='bg-warning'>
         <div className='container p-1 mt-2 p-md-5 mb-0 rounded text-body-emphasis'>
           <div className='col-lg-6 px-0'>
-            <p style={containerStyle} className='lead my-3 fw-bold'>
+            <p
+              style={containerStyle}
+              className='lead fs-2 fw-bold mb-5 text-white text'
+            >
               Valentine's Day is coming 💕 20% off Clothing & Accessories
             </p>
-            <p className='lead mb-0'>
+            <p className='lead mb-4 pb-4'>
               <a
                 href='#'
-                className='text-primary-emphasis text-black mb-0 pb-0 fw-bold'
+                className='pb-1 text-white text fw-bold fs-4 text-decoration-none'
               >
                 Our selection:
               </a>
             </p>
           </div>
-          <nav className='nav nav-underline justify-content-between mt-1'>
-            <a className='nav-item nav-link link-body-emphasis' href='#'>
+          <nav className='nav nav-underline justify-content-between fw-bold mt-2 text-white text link-light'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              href='#'
+            >
               Women's Clothing
             </a>
-            <a className='nav-item nav-link link-body-emphasis active' href='#'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2 link-light rounded border-2'
+              href='#'
+            >
               Electronics
             </a>
-            <a className='nav-item nav-link link-body-emphasis' href='#'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              href='#'
+            >
               Jewelery
             </a>
-            <a className='nav-item nav-link link-body-emphasis' href='#'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              href='#'
+            >
               Technology
             </a>
-            <a className='nav-item nav-link link-body-emphasis' href='#'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              href='#'
+            >
               Technology
             </a>
-            <a className='nav-item nav-link link-body-emphasis' href='#'>
+            <a
+              className='nav-item nav-link text-white text border border-dark text-body px-2  rounded border-2'
+              href='#'
+            >
               Technology
             </a>
           </nav>
@@ -48,7 +69,7 @@ export default function Nav4() {
         <div className='container'>
           {' '}
           <a
-            className='nav-item mb-2 ms-4 mt-2 nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
+            className='nav-item mb-2 ms-5 mt-2 nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
             href='#'
           >
             Shop now{' '}
