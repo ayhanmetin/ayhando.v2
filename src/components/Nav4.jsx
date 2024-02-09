@@ -7,12 +7,50 @@ const containerStyle = {
 export default function Nav4() {
   return (
     <>
-      <div className='p-1 mt-2 p-md-5 mb-4 rounded text-body-emphasis bg-warning'>
-        <div className='col-lg-6 px-0'>
-          <p style={containerStyle} className='lead my-3 fw-bold'>
-            Valentine's Day is coming 💕 20% off Clothing & Accessories
-          </p>
-          <a className='nav-item mb-3 nav-link link-body-emphasis' href='#'>
+      <div className='bg-warning'>
+        <div className='container p-1 mt-2 p-md-5 mb-0 rounded text-body-emphasis'>
+          <div className='col-lg-6 px-0'>
+            <p style={containerStyle} className='lead my-3 fw-bold'>
+              Valentine's Day is coming 💕 20% off Clothing & Accessories
+            </p>
+            <p className='lead mb-0'>
+              <a
+                href='#'
+                className='text-primary-emphasis text-black mb-0 pb-0 fw-bold'
+              >
+                Our selection:
+              </a>
+            </p>
+          </div>
+          <nav className='nav nav-underline justify-content-between mt-1'>
+            <a className='nav-item nav-link link-body-emphasis' href='#'>
+              Women's Clothing
+            </a>
+            <a className='nav-item nav-link link-body-emphasis active' href='#'>
+              Electronics
+            </a>
+            <a className='nav-item nav-link link-body-emphasis' href='#'>
+              Jewelery
+            </a>
+            <a className='nav-item nav-link link-body-emphasis' href='#'>
+              Technology
+            </a>
+            <a className='nav-item nav-link link-body-emphasis' href='#'>
+              Technology
+            </a>
+            <a className='nav-item nav-link link-body-emphasis' href='#'>
+              Technology
+            </a>
+          </nav>
+        </div>
+      </div>
+      <div className='bg-black'>
+        <div className='container'>
+          {' '}
+          <a
+            className='nav-item mb-2 ms-4 mt-2 nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
+            href='#'
+          >
             Shop now{' '}
             <span>
               <svg
@@ -27,35 +65,7 @@ export default function Nav4() {
               </svg>
             </span>
           </a>
-          <p className='lead mb-0'>
-            <a
-              href='#'
-              className='text-primary-emphasis text-black mb-0 pb-0 fw-bold'
-            >
-              Our selection:
-            </a>
-          </p>
         </div>
-        <nav className='nav nav-underline justify-content-between mt-1'>
-          <a className='nav-item nav-link link-body-emphasis' href='#'>
-            Women's Clothing
-          </a>
-          <a className='nav-item nav-link link-body-emphasis active' href='#'>
-            Electronics
-          </a>
-          <a className='nav-item nav-link link-body-emphasis' href='#'>
-            Jewelery
-          </a>
-          <a className='nav-item nav-link link-body-emphasis' href='#'>
-            Technology
-          </a>
-          <a className='nav-item nav-link link-body-emphasis' href='#'>
-            Technology
-          </a>
-          <a className='nav-item nav-link link-body-emphasis' href='#'>
-            Technology
-          </a>
-        </nav>
       </div>
     </>
   );

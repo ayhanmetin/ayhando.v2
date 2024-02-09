@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function Nav3() {
   return (
-    <div className='d-flex mt-3 flex-wrap align-items-center justify-content-between justify-content-lg-start border-bottom pb-3'>
+    <div className='container d-flex mt-3 flex-wrap align-items-center justify-content-between justify-content-lg-start border-bottom pb-4'>
       <a
         href='/'
         className='d-flex align-items-center mb-2 mb-lg-0 text-secondary text-decoration-none'
