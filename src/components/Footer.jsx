@@ -4,7 +4,7 @@ import Footer3 from './Footer3';
 
 export default function Footer() {
   const footerStyle = {
-    marginTop: '5rem',
+    marginTop: '15rem',
     color: 'gray',
   };
 
@@ -98,11 +98,7 @@ export default function Footer() {
                   '100-day return policy',
                   'Flexible payment options',
                 ])}
-                {renderNavSection('Our services', [
-                  'Connect your stores',
-                  'Marketing Services',
-                  'Learn more',
-                ])}
+              
               </div>
               <div
                 className='d-flex flex-column flex-sm-row justify-content-between'
