@@ -20,12 +20,12 @@ export default function Nav3() {
           </NavLink>
         </li>
         <li>
-          <NavLink to='/products' className='nav-link px-2 text-secondary'>
+          <NavLink to='/' className='nav-link px-2 text-secondary'>
             Shop All
           </NavLink>
         </li>
         <li>
-          <NavLink to='/category' className='nav-link px-2 text-secondary'>
+          <NavLink to='/' className='nav-link px-2 text-secondary'>
             Discover{' '}
             <span
               className='rounded px-2'
@@ -36,10 +36,7 @@ export default function Nav3() {
           </NavLink>
         </li>
         <li>
-          <NavLink
-            to='/products'
-            className='nav-link px-2 text-secondary text-danger'
-          >
+          <NavLink to='/' className='nav-link px-2 text-secondary text-danger'>
             Sale %
           </NavLink>
         </li>
@@ -55,12 +52,13 @@ export default function Nav3() {
       </form>
 
       <div className='d-flex align-items-center'>
-        <button
+        <NavLink
+          to="/login"
           type='button'
           className='btn border border-light-subtle p-1 px-2 me-3'
         >
           Login
-        </button>
+        </NavLink>
         <NavLink
           className='nav-link border px-3 me-3 border-light-subtle p-1 rounded'
           to='/favorite'

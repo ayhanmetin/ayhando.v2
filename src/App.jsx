@@ -7,6 +7,8 @@ import Footer from './components/Footer';
 import Home from './pages/Home';
 import Categories from './pages/Categories';
 import ProductLayout from './pages/ProductLayout';
+import Login from './pages/Login';
+import PageNotFound from './pages/PageNotFound';
 
 function App() {
   return (
@@ -18,8 +20,9 @@ function App() {
           <Route path='/' element={<Home />} />
           <Route path='/categories' element={<Categories />} />
           <Route path='category/:categoryName' element={<ProductLayout />} />
+          <Route path='/login' element={<Login />} />
 
-          {/* <Route path='*' element={<PageNotFound />} /> */}
+          <Route path='*' element={<PageNotFound />} />
         </Routes>
       </div>
       <Footer />
