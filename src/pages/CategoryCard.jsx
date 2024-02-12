@@ -1,14 +1,17 @@
 import React, { useEffect, useState } from 'react';
+import { useParams } from 'react-router-dom';
 
-export default function Home() {
-  const [products, setProducts] = useState([]);
+export default function CategoryCard() {
+  const { categoryName } = useParams();
+  const [categoryProducts, setCategoryProducts] = useState([]);
 
   useEffect(() => {
-    fetch('https://fakestoreapi.com/products?limit=20')
+    fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
       .then(res => res.json())
-      .then(json => setProducts(json));
-  }, []);
+      .then(json => setCategoryProducts(json));
+  }, [categoryName]);
 
+  // Styles defined inside the component for clarity
   const cardStyle = {
     width: '18rem',
     position: 'relative',
@@ -41,10 +44,10 @@ export default function Home() {
   return (
     <div className='container mt-4'>
       <div className='row'>
-        {products.map((product, index) => (
+        {categoryProducts.map((product, index) => (
           <div
             key={product.id}
-            className='col-3 d-flex justify-content-center mt-4'
+            className='col-md-4 d-flex justify-content-center mt-4'
           >
             <div className='card' style={cardStyle}>
               <span className='rounded' style={favIconStyle}>

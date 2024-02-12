@@ -10,7 +10,7 @@ export default function Footer2() {
         <div className='container d-flex flex-column flex-sm-row justify-content-between pt-4 mb-3fs-6'>
           <p style={{ color: 'white' }}>
             All prices include VAT and the manufacturer’s recommended retail
-            price.{' '}
+            price{' '}
           </p>
           <ul className='list-unstyled d-flex'>
             <p className='text-white fs-6'>You can also find me on</p>

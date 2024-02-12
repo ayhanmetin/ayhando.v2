@@ -5,6 +5,8 @@ import NavBar from './components/NavBar';
 import Nav from './components/Nav';
 import Footer from './components/Footer';
 import Home from './pages/Home';
+import Categories from './pages/Categories';
+import ProductLayout from './pages/ProductLayout';
 
 function App() {
   return (
@@ -14,6 +16,10 @@ function App() {
       <div className='flex-grow-1'>
         <Routes>
           <Route path='/' element={<Home />} />
+          <Route path='/categories' element={<Categories />} />
+          <Route path='category/:categoryName' element={<ProductLayout />} />
+
+          {/* <Route path='*' element={<PageNotFound />} /> */}
         </Routes>
       </div>
       <Footer />
