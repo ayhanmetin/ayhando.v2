@@ -6,7 +6,6 @@ export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  
   const styles = {
     cartContainer: {
       maxWidth: '800px',
@@ -87,42 +86,32 @@ export default function Cart() {
   const handleCheckout = () => {
     clearCart(); // Clear the cart first
     setShowSuccessMessage(true); // Then show the success message
-    setTimeout(() => {
-      setShowSuccessMessage(false); // Hide the success message after a delay
-    }, 3000); // Adjust time as needed
+    setTimeout(() => setShowSuccessMessage(false), 3000); // Hide the success message after a delay
   };
 
-  const totalPrice = cartItems.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0
-  );
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div style={styles.cartContainer} className='cart-container mt-5 mb-5'>
+    <div style={styles.cartContainer}>
       <h2 className='text-center'>Your Shopping Cart</h2>
       {showSuccessMessage && (
-        <div style={styles.successMessage} className='alert alert-success text-center' role='alert'>
+        <div style={styles.successMessage} role="alert">
           Your order has been submitted successfully!
         </div>
       )}
       {cartItems.length === 0 && !showSuccessMessage && (
         <p className='text-center'>Your cart is empty</p>
       )}
-      <div style={styles.cartItems} className='cart-items'>
+      <div style={styles.cartItems}>
         {cartItems.map(item => (
-          <div
-            style={styles.cartItem}
-            className='cart-item d-flex align-items-center justify-content-between'
-            key={item.id}
-          >
+          <div style={styles.cartItem} key={item.id}>
             <img
               style={styles.cartItemImage}
               src={item.image}
               alt={item.title}
-              className='cart-item-image'
             />
-            <div className='cart-item-info'>
-              <Link to={`/product/${item.id}`} style={styles.cartItemTitle} className='cart-item-title'>
+            <div>
+              <Link to={`/product/${item.id}`} style={styles.cartItemTitle}>
                 {item.title}
               </Link>
               <div style={styles.cartItemPrice}>
@@ -132,7 +121,6 @@ export default function Cart() {
             <button
               onClick={() => removeFromCart(item.id)}
               style={{ ...styles.button, ...styles.deleteButton }}
-              className='btn btn-danger'
             >
               Remove
             </button>
@@ -140,12 +128,10 @@ export default function Cart() {
         ))}
       </div>
       {cartItems.length > 0 && (
-        <div style={styles.cartSummary} className='cart-summary mt-4'>
+        <div style={styles.cartSummary}>
           <h4>Total Price: $ {totalPrice.toFixed(2)}</h4>
           <button
-            type='button'
             style={{ ...styles.button, ...styles.checkoutButton }}
-            className='btn btn-success'
             onClick={handleCheckout}
           >
             Proceed to Checkout
