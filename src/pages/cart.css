@@ -6,19 +6,12 @@
   border-radius: 12px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
   background-color: #fff;
-  /* Adjusted height to auto to accommodate variable content size */
-  /* Added min-height to ensure consistency with your original design */
-  min-height: 15rem;
-  /* Added margin-bottom for spacing towards the footer */
-  margin-bottom: 50px; /* Adjust as necessary for your layout */
+  height: 200px;
 }
 
 .cart-items {
   border-bottom: 2px solid #eee;
   margin-bottom: 25px;
-  /* Added overflow-auto to handle overflow for a large number of items */
-  overflow-y: auto;
-  max-height: calc(100vh - 250px); /* Adjust based on your header/footer height */
 }
 
 .cart-item {
@@ -83,7 +76,7 @@
 }
 
 .delete-button {
-  background-color: #dc3545;
+  background-color: #dc3545; /* Red color */
   color: white;
   transition: background-color 0.3s;
 }
@@ -93,12 +86,11 @@
 }
 
 .success-message {
-  background-color: #d4edda;
-  color: #155724;
-  padding: 12px;
+  background-color: #d4edda; /* Lighter green */
+  color: #155724; /* Darker text */
+  padding: 12px; /* Increased padding */
   border-radius: 8px;
   text-align: center;
-  margin-bottom: 20px; /* Ensures spacing after the message */
 }
 
 .quantity-input {
