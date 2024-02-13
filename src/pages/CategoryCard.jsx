@@ -1,9 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { useCart } from '../context/CartContext'; // Make sure this path is correct
 
-export default function CategoryCard() {
+export default function CategoryCard({ user }) {
   const { categoryName } = useParams();
   const [categoryProducts, setCategoryProducts] = useState([]);
+  const { addToCart } = useCart(); // Use the useCart hook to access addToCart
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/category/${categoryName}`)
@@ -21,23 +23,6 @@ export default function CategoryCard() {
     height: '150px',
     objectFit: 'contain',
     width: '100%',
-  };
-
-  const favIconStyle = {
-    position: 'absolute',
-    top: '10px',
-    right: '15px',
-    cursor: 'pointer',
-    color: 'white',
-    backgroundColor: 'black',
-    padding: '6px',
-  };
-
-  const buttonStyle = {
-    position: 'absolute',
-    bottom: '10px',
-    right: '10px',
-    zIndex: 1,
   };
 
   return (
@@ -61,13 +46,15 @@ export default function CategoryCard() {
                   {product.description.substring(0, 50)}...
                 </p>
                 <p>${product.price}</p>
-                <a
-                  href='#'
-                  className='btn border mt-auto'
-                  style={{ position: 'relative', zIndex: 0 }}
-                >
-                  Add to bag
-                </a>
+                {user && (
+                  <button
+                    className='btn border mt-auto'
+                    onClick={() => addToCart(product)}
+                    style={{ position: 'relative', zIndex: 0 }}
+                  >
+                    Add to bag
+                  </button>
+                )}
               </div>
             </div>
           </div>

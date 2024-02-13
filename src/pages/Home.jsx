@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from 'react';
+import { useCart } from '../context/CartContext'; // Adjust the import path as necessary
 
-export default function Home() {
+export default function Home({ user }) {
   const [products, setProducts] = useState([]);
+  const { addToCart } = useCart(); // Use the useCart hook to access addToCart
 
   useEffect(() => {
     fetch('https://fakestoreapi.com/products?limit=20')
@@ -12,30 +14,13 @@ export default function Home() {
   const cardStyle = {
     width: '18rem',
     position: 'relative',
-    marginBottom: '20px', // Ensures space at the bottom of the card
+    marginBottom: '20px',
   };
 
   const imgStyle = {
     height: '150px',
     objectFit: 'contain',
     width: '100%',
-  };
-
-  const favIconStyle = {
-    position: 'absolute',
-    top: '10px',
-    right: '15px',
-    cursor: 'pointer',
-    color: 'white',
-    backgroundColor: 'black',
-    padding: '6px',
-  };
-
-  const buttonStyle = {
-    position: 'absolute',
-    bottom: '10px',
-    right: '10px',
-    zIndex: 1,
   };
 
   return (
@@ -59,13 +44,15 @@ export default function Home() {
                   {product.description.substring(0, 50)}...
                 </p>
                 <p>${product.price}</p>
-                <a
-                  href='#'
-                  className='btn border mt-auto'
-                  style={{ position: 'relative', zIndex: 0 }}
-                >
-                  Add to bag
-                </a>
+                {user && (
+                  <button
+                    className='btn border mt-auto'
+                    onClick={() => addToCart(product)}
+                    style={{ position: 'relative', zIndex: 0 }}
+                  >
+                    Add to bag
+                  </button>
+                )}
               </div>
             </div>
           </div>

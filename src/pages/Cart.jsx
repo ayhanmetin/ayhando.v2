@@ -1,106 +1,53 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import './cart.css';
+import { useCart } from '../context/CartContext';
+import './Cart.css'; // Make sure this path correctly points to your CSS file
 
-export default function Cart({ user }) {
-  const [carts, setCarts] = useState([]);
+export default function Cart() {
+  const { cartItems, removeFromCart, clearCart } = useCart();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  useEffect(() => {
-    const storedCarts = JSON.parse(localStorage.getItem('carts')) ?? [];
-    const cartsWithQuantity = storedCarts.map((item) => ({
-      ...item,
-      quantity: item.quantity || 1,
-    }));
-    setCarts(cartsWithQuantity);
-  }, []);
-
-  const handleDelete = (id) => {
-    const updatedCarts = carts.filter((item) => item.id !== id);
-    setCarts(updatedCarts);
-    localStorage.setItem('carts', JSON.stringify(updatedCarts));
-  };
-
-  const updateQuantity = (id, quantity) => {
-    if (!Number.isInteger(quantity) || quantity < 1) {
-      return;
-    }
-    const updatedCarts = carts.map((item) =>
-      item.id === id ? { ...item, quantity: quantity } : item,
-    );
-    setCarts(updatedCarts);
-    localStorage.setItem('carts', JSON.stringify(updatedCarts));
-  };
-
   const handleCheckout = () => {
-    setShowSuccessMessage(true);
-    setTimeout(() => setShowSuccessMessage(false), 9000);
-    setCarts([]);
-    localStorage.removeItem('carts');
+    clearCart(); // Clear the cart first
+    setShowSuccessMessage(true); // Then show the success message
+    setTimeout(() => {
+      setShowSuccessMessage(false); // Hide the success message after a delay
+    }, 3000); // Adjust time as needed
   };
 
-  const totalPrice = carts.reduce(
-    (total, item) => total + item.price * item.quantity,
-    0,
-  );
+  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
 
   return (
-    <div className="cart-container mt-5 text-center">
-      <h2>Your Shopping Cart</h2>
+    <div className="cart-container mt-5 mb-5">
+      <h2 className="text-center">Your Shopping Cart</h2>
       {showSuccessMessage && (
-        <div className="success-message">
+        <div className="alert alert-success text-center" role="alert">
           Your order has been submitted successfully!
         </div>
       )}
-      {carts.length === 0 ? (
-        <p>Your cart is empty</p>
-      ) : (
-        <div className="cart-items">
-          {carts.map((item) => (
-            <div className="cart-item" key={item.id}>
-              <img
-                src={item.image}
-                alt={item.title}
-                className="cart-item-image"
-              />
-              <div className="cart-item-info">
-                <Link
-                  to={`/products/product/${item.id}`}
-                  className="cart-item-title"
-                >
-                  {item.title}
-                </Link>
-                <span className="cart-item-price">
-                  $ {item.price.toFixed(2)} x {item.quantity}
-                </span>
-                <input
-                  type="number"
-                  value={item.quantity}
-                  onChange={(e) =>
-                    updateQuantity(item.id, parseInt(e.target.value, 10) || 1)
-                  }
-                  className="quantity-input"
-                  min="1"
-                />
-              </div>
-              <button
-                onClick={() => handleDelete(item.id)}
-                className="delete-button"
-              >
-                Delete
-              </button>
-            </div>
-          ))}
-        </div>
+      {cartItems.length === 0 && !showSuccessMessage && (
+        <p className="text-center">Your cart is empty</p>
       )}
-      {carts.length > 0 && (
-        <div className="cart-summary">
-          <h3>Total Price: $ {totalPrice.toFixed(2)}</h3>
-          <button
-            type="button"
-            className="btn btn-primary checkout-button"
-            onClick={handleCheckout}
-          >
+      <div className="cart-items">
+        {cartItems.map((item) => (
+          <div className="cart-item d-flex align-items-center justify-content-between" key={item.id}>
+            <img src={item.image} alt={item.title} className="cart-item-image" />
+            <div className="cart-item-info">
+              <Link to={`/product/${item.id}`} className="cart-item-title">
+                {item.title}
+              </Link>
+              <div>$ {item.price.toFixed(2)} x {item.quantity}</div>
+            </div>
+            <button onClick={() => removeFromCart(item.id)} className="btn btn-danger">
+              Remove
+            </button>
+          </div>
+        ))}
+      </div>
+      {cartItems.length > 0 && (
+        <div className="cart-summary mt-4">
+          <h4>Total Price: $ {totalPrice.toFixed(2)}</h4>
+          <button type="button" className="btn btn-success" onClick={handleCheckout}>
             Proceed to Checkout
           </button>
         </div>
