@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
-import './Cart.css'; // Make sure this path correctly points to your CSS file
+import './cart.css'; // Make sure this path correctly points to your CSS file
 
 export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
