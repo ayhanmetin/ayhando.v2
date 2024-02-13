@@ -9,7 +9,7 @@ export default function Cart() {
   const handleCheckout = () => {
     clearCart();
     setShowSuccessMessage(true);
-    setTimeout(() => setShowSuccessMessage(false), 3000);
+    setTimeout(() => setShowSuccessMessage(false), 5000);
   };
 
   const totalPrice = cartItems.reduce(
@@ -21,7 +21,7 @@ export default function Cart() {
     <div className='container my-5'>
       <h2 className='text-center'>Your Shopping Cart</h2>
       {showSuccessMessage && (
-        <div className='alert alert-success' role='alert'>
+        <div className='alert alert-success text-center mt-3' role='alert'>
           Your order has been submitted successfully!
         </div>
       )}
@@ -34,9 +34,14 @@ export default function Cart() {
             <div className='row align-items-center'>
               <div className='col-md-2'>
                 <img
-                  className='img-fluid rounded'
+                  className='img-fluid'
                   src={item.image}
                   alt={item.title}
+                  style={{
+                    height: '100px',
+                    width: '100px',
+                    objectFit: 'contain',
+                  }} // Fixed size with object-fit
                 />
               </div>
               <div className='col-md-8'>
