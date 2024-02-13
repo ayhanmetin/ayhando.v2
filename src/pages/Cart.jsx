@@ -6,7 +6,7 @@ export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  // Styles as JavaScript objects
+  
   const styles = {
     cartContainer: {
       maxWidth: '800px',
