@@ -3,7 +3,7 @@ import { NavLink } from 'react-router-dom';
 
 export default function Nav3({ user, handleLogout }) {
   return (
-    <div className='container d-flex mt-1 flex-wrap align-items-center justify-content-between justify-content-lg-start border-bottom pb-3 ps-5 mb-0'>
+    <div className='container d-flex mt-1 flex-wrap align-items-center justify-content-between justify-content-lg-start border-bottom pb-3 ps-3 mb-0'>
       <NavLink
         to='/'
         className='d-flex align-items-center mb-2 mb-lg-0 text-secondary text-decoration-none'

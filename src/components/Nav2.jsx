@@ -4,8 +4,8 @@ import './CustomNavLink.css'; // Import custom CSS for hover effect
 
 export default function Nav2() {
   return (
-    <div className='container'>
-      <nav className='nav justify-content-between mt-3 ps-5 pb-2'>
+    <div className='container fs-6 text d-flex justify-content-center'>
+      <nav className='nav d-flex justify-content-between mt-3 pb-2'>
         <NavLink
           target='_blank'
           className='nav-item nav-link custom-nav-link'

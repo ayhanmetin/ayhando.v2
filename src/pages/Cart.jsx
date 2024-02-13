@@ -6,134 +6,63 @@ export default function Cart() {
   const { cartItems, removeFromCart, clearCart } = useCart();
   const [showSuccessMessage, setShowSuccessMessage] = useState(false);
 
-  const styles = {
-    cartContainer: {
-      maxWidth: '800px',
-      margin: 'auto',
-      padding: '20px',
-      border: '2px solid #ccc',
-      borderRadius: '12px',
-      boxShadow: '0 4px 8px rgba(0, 0, 0, 0.15)',
-      backgroundColor: '#fff',
-      minHeight: '15rem',
-      marginBottom: '50px',
-    },
-    cartItems: {
-      borderBottom: '2px solid #eee',
-      marginBottom: '25px',
-      overflowY: 'auto',
-      maxHeight: 'calc(100vh - 250px)',
-    },
-    cartItem: {
-      display: 'flex',
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      marginBottom: '25px',
-      padding: '15px',
-      border: '1px solid #eee',
-      borderRadius: '8px',
-    },
-    cartItemImage: {
-      width: '120px',
-      height: '120px',
-      objectFit: 'cover',
-      border: '1px solid #ddd',
-      borderRadius: '8px',
-      marginRight: '20px',
-    },
-    cartItemTitle: {
-      fontSize: '1.3em',
-      color: '#333',
-      textDecoration: 'none',
-    },
-    cartItemPrice: {
-      fontSize: '1.2em',
-      color: '#666',
-    },
-    cartSummary: {
-      textAlign: 'right',
-      marginTop: '25px',
-    },
-    button: {
-      borderRadius: '8px',
-      padding: '12px 25px',
-    },
-    checkoutButton: {
-      backgroundColor: '#28a745',
-      color: 'white',
-    },
-    deleteButton: {
-      backgroundColor: '#dc3545',
-      color: 'white',
-    },
-    successMessage: {
-      backgroundColor: '#d4edda',
-      color: '#155724',
-      padding: '12px',
-      borderRadius: '8px',
-      textAlign: 'center',
-      marginBottom: '20px',
-    },
-    quantityInput: {
-      margin: '10px',
-      width: '60px',
-      border: '1px solid #ccc',
-      borderRadius: '8px',
-      padding: '1px',
-    },
-  };
-
   const handleCheckout = () => {
-    clearCart(); // Clear the cart first
-    setShowSuccessMessage(true); // Then show the success message
-    setTimeout(() => setShowSuccessMessage(false), 3000); // Hide the success message after a delay
+    clearCart();
+    setShowSuccessMessage(true);
+    setTimeout(() => setShowSuccessMessage(false), 3000);
   };
 
-  const totalPrice = cartItems.reduce((total, item) => total + item.price * item.quantity, 0);
+  const totalPrice = cartItems.reduce(
+    (total, item) => total + item.price * item.quantity,
+    0
+  );
 
   return (
-    <div style={styles.cartContainer}>
+    <div className='container my-5'>
       <h2 className='text-center'>Your Shopping Cart</h2>
       {showSuccessMessage && (
-        <div style={styles.successMessage} role="alert">
+        <div className='alert alert-success' role='alert'>
           Your order has been submitted successfully!
         </div>
       )}
       {cartItems.length === 0 && !showSuccessMessage && (
         <p className='text-center'>Your cart is empty</p>
       )}
-      <div style={styles.cartItems}>
-        {cartItems.map(item => (
-          <div style={styles.cartItem} key={item.id}>
-            <img
-              style={styles.cartItemImage}
-              src={item.image}
-              alt={item.title}
-            />
-            <div>
-              <Link to={`/product/${item.id}`} style={styles.cartItemTitle}>
-                {item.title}
-              </Link>
-              <div style={styles.cartItemPrice}>
-                $ {item.price.toFixed(2)} x {item.quantity}
+      <div className='list-group'>
+        {cartItems.map((item, index) => (
+          <div className='list-group-item' key={item.id}>
+            <div className='row align-items-center'>
+              <div className='col-md-2'>
+                <img
+                  className='img-fluid rounded'
+                  src={item.image}
+                  alt={item.title}
+                />
+              </div>
+              <div className='col-md-8'>
+                <Link to={`/product/${item.id}`} className='text-dark h5 mb-0'>
+                  {item.title}
+                </Link>
+                <p className='mb-0'>
+                  $ {item.price.toFixed(2)} x {item.quantity}
+                </p>
+              </div>
+              <div className='col-md-2'>
+                <button
+                  onClick={() => removeFromCart(item.id)}
+                  className='btn btn-danger'
+                >
+                  Remove
+                </button>
               </div>
             </div>
-            <button
-              onClick={() => removeFromCart(item.id)}
-              style={{ ...styles.button, ...styles.deleteButton }}
-            >
-              Remove
-            </button>
           </div>
         ))}
       </div>
       {cartItems.length > 0 && (
-        <div style={styles.cartSummary}>
+        <div className='text-right mt-3'>
           <h4>Total Price: $ {totalPrice.toFixed(2)}</h4>
-          <button
-            style={{ ...styles.button, ...styles.checkoutButton }}
-            onClick={handleCheckout}
-          >
+          <button className='btn btn-success' onClick={handleCheckout}>
             Proceed to Checkout
           </button>
         </div>

@@ -58,7 +58,7 @@ export default function Nav4() {
         <div className='container'>
           {' '}
           <Link
-            className='nav-item mb-2 ms-5 mt-2 nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
+            className='nav-item mb-2 ms-2 mt-2 nav-link link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
             to='/category/electronics'
           >
             Shop now{' '}
