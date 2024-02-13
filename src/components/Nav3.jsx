@@ -16,11 +16,6 @@ export default function Nav3({ user, handleLogout }) {
         </li>
         <li>
           <NavLink to='/' className='nav-link px-2 text-secondary'>
-            New In
-          </NavLink>
-        </li>
-        <li>
-          <NavLink to='/' className='nav-link px-2 text-secondary'>
             Shop All
           </NavLink>
         </li>
