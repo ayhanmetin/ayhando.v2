@@ -8,8 +8,8 @@ const containerStyle = {
 export default function Nav4() {
   return (
     <>
-      <div className='bg-warning border-top border-4 border-dark'>
-        <div className='container p-1 mt-2 p-md-5 mb-0 rounded text-body-emphasis'>
+      <div className='bg-warning border-top mb-0 pb-0 border-4 border-dark'>
+        <div className='container pt-0 p-1 mt-0 p-md-4 mb-0 rounded text-body-emphasis'>
           <div className='col-lg-6 px-0'>
             <p
               style={containerStyle}

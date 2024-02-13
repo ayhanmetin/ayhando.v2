@@ -20,7 +20,7 @@ export default function Footer() {
   };
 
   const logoStyle = {
-    height: '20px',
+    height: '15px',
     marginRight: '10px',
   };
 
@@ -98,7 +98,6 @@ export default function Footer() {
                   '100-day return policy',
                   'Flexible payment options',
                 ])}
-              
               </div>
               <div
                 className='d-flex flex-column flex-sm-row justify-content-between'

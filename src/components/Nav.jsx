@@ -2,7 +2,7 @@ import React from 'react';
 
 const containerStyle = {
   fontFamily: "'Open Sans', sans-serif",
-  fontSize: '10px',
+  fontSize: '15px',
 };
 
 const pStyle = {
