@@ -26,7 +26,7 @@ function App() {
   }, [navigate, location.pathname, user]);
 
   const handleLogin = userCredentials => {
-    const user = { id: 1, name: 'Germany2024', ...userCredentials }; // Simulate user login
+    const user = { id: 1, name: 'Germany2024', ...userCredentials }; 
     localStorage.setItem('user', JSON.stringify(user));
     setUser(user);
     navigate('/'); // Navigate to the home page after login
