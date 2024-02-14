@@ -12,14 +12,14 @@ export default function Categories({ user }) {
 
   const styles = {
     heading: {
-      fontFamily: '"Segoe UI", Arial, sans-serif', // Professional, clean font
+      fontFamily: '"Segoe UI", Arial, sans-serif', 
       fontWeight: 300, 
       letterSpacing: '0.02em', 
       color: '#333', 
     },
     link: {
       borderRadius: '0.5rem',
-      transition: 'all 0.2s ease', // Smooth transition for hover effects
+      transition: 'all 0.2s ease', 
     },
   };
 
