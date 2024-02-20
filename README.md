@@ -1,5 +1,8 @@
 # E-Commerce Application
 
+![e-commerce-github](https://github.com/ayhanmetin/ayhando.v2/assets/108268012/9c115fda-98ab-4c30-a93a-d2d322cc06b4)
+
+
 ## Overview
 
 **Ayhando.v2** is an e-commerce application designed to showcase the integration of `React.js` with the  **E-commerce API**, emphasizing its **RESTful** architecture. It features a modern, responsive UI and provides functionality for:
