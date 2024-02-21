@@ -9,7 +9,7 @@ export default function Nav2() {
         <NavLink
           target='_blank'
           className='nav-item nav-link custom-nav-link'
-          to='https://www.ayhanmetin.eu/practice'
+          to='https://www.ayhanmetin.eu/testing'
         >
           Testing Practice{' '}
           <svg
