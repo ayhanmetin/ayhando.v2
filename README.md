@@ -21,7 +21,7 @@
 ```
 https://ayhando.vercel.app/
 ```
-# Project Overview: E-Commerce Platform
+# Project Overview
 - Creating Navbar
 - Building Page Structure
 - Accessing Pages through React Router Dom
