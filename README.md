@@ -21,7 +21,7 @@
 ```
 https://ayhando.vercel.app/
 ```
-# React-Router-Dom and Bootstrap Setup
+# Project Overview: E-Commerce Platform
 - Creating Navbar
 - Building Page Structure
 - Accessing Pages through React Router Dom
