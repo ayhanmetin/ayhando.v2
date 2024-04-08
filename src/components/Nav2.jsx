@@ -1,6 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
-import './CustomNavLink.css'; // Import custom CSS for hover effect
+import './CustomNavLink.css';
 
 export default function Nav2() {
   return (
@@ -23,15 +23,14 @@ export default function Nav2() {
             <path d='M.443 12c0 .414.336.75.75.75h20.869l-7.72 7.72a.75.75 0 0 0 1.06 1.06l7.94-7.94a2.252 2.252 0 0 0 0-3.18l-7.94-7.94a.75.75 0 0 0-1.06 1.06l7.72 7.72H1.192a.75.75 0 0 0-.75.75z'></path>
           </svg>
         </NavLink>
-        <NavLink className='nav-item nav-link custom-nav-link' to='/'>
+        <a
+          className='nav-item nav-link custom-nav-link'
+          href='https://ayhanmetin.eu/testing'
+          target='_blank'
+          rel='noopener noreferrer'
+        >
           Cypress
-        </NavLink>
-        <NavLink className='nav-item nav-link custom-nav-link' to='/'>
-          Selenium
-        </NavLink>
-        <NavLink className='nav-item nav-link custom-nav-link' to='/'>
-          Playwright
-        </NavLink>
+        </a>
       </nav>
     </div>
   );
