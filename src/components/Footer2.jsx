@@ -8,9 +8,15 @@ export default function Footer2() {
     <>
       <div className='bg-dark'>
         <div className='container d-flex flex-column flex-sm-row justify-content-between pt-4 mb-3fs-6'>
-          <p style={{ color: 'white' }}>
-            All prices include VAT and the manufacturer’s recommended retail
-            price{' '}
+          <p>
+            {' '}
+            <a
+              target='_blank'
+              className='link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover'
+              href='https://github.com/ayhanmetin/ayhando.v2'
+            >
+              GitHub Repository
+            </a>
           </p>
           <ul className='list-unstyled d-flex'>
             <p className='text-white fs-6'>You can also find me on</p>
