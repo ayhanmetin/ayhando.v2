@@ -4,7 +4,7 @@ import Footer3 from './Footer3';
 
 export default function Footer() {
   const footerStyle = {
-    marginTop: '15rem',
+    marginTop: '5rem',
     color: 'gray',
   };
 

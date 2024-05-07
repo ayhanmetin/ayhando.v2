@@ -11,7 +11,7 @@ import Login from './pages/Login';
 import PageNotFound from './pages/PageNotFound';
 import Cart from './pages/Cart';
 import PrivateRoute from './PrivateRoute';
-import { CartProvider } from './context/CartContext'; // Update this path if necessary
+import { CartProvider } from './context/CartContext'; 
 
 function App() {
   const [user, setUser] = useState(JSON.parse(localStorage.getItem('user')));
@@ -19,7 +19,6 @@ function App() {
   const location = useLocation();
 
   useEffect(() => {
-    // Redirect to home if user is logged in and tries to access the login page
     if (user && location.pathname === '/login') {
       navigate('/');
     }
@@ -29,13 +28,13 @@ function App() {
     const user = { id: 1, name: 'Germany2024', ...userCredentials }; 
     localStorage.setItem('user', JSON.stringify(user));
     setUser(user);
-    navigate('/'); // Navigate to the home page after login
+    navigate('/'); 
   };
 
   const handleLogout = () => {
     localStorage.removeItem('user');
     setUser(null);
-    navigate('/login'); // Navigate to login page after logout
+    navigate('/login'); 
   };
 
   return (
